@@ -63,7 +63,8 @@
                     Height="25"
                     MinWidth="550"
                     TextWrapping="Wrap"
-                    Text="http://" 
+                    Text="http://" KeyUp="adres_KeyUp" 
+                    
                     />
                 <Button
                     x:Name="btnWejdz"
@@ -83,7 +84,9 @@
                 <WebBrowser
                     x:Name="wbPrzegladarka"
                     VerticalAlignment="Top"
-                    HorizontalAlignment="Left"/>
+                    HorizontalAlignment="Left" 
+                    Navigated="wbPrzegladarka_Navigated" 
+                    Navigating="wbPrzegladarka_Navigating"/>
             </Border>
         </DockPanel>
     </Grid>

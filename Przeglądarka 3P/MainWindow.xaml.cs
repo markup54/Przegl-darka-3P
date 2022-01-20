@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Przeglądarka_3P
 {
@@ -68,6 +70,25 @@ namespace Przeglądarka_3P
         {
             if (e.Key == Key.Enter)
                 wbPrzegladarka.Navigate(txtAdres.Text);
+        }
+
+        private void wbPrzegladarka_Navigated(object sender, NavigationEventArgs e)
+        {
+            txtAdres.Text = e.Uri.OriginalString;
+        }
+
+        private void wbPrzegladarka_Navigating(object sender, NavigatingCancelEventArgs e)
+        {
+            HideScriptErrors(wbPrzegladarka, true);
+        }
+
+        public void HideScriptErrors(WebBrowser wb, bool Hide)
+        {
+            dynamic activeX = this.wbPrzegladarka.GetType().
+                InvokeMember("ActiveXInstance",
+                BindingFlags.GetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
+                null, this.wbPrzegladarka , new object[] { });
+            activeX.Silent = true;
         }
     }
 }
