@@ -32,12 +32,14 @@ namespace Przeglądarka_3P
 
         private void RamkaOn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (brdRamka != null)
+                brdRamka.BorderThickness = new Thickness(3);
         }
 
         private void RamkaOff_Click(object sender, RoutedEventArgs e)
         {
-
+            if(brdRamka != null)
+                brdRamka.BorderThickness = new Thickness(0);
         }
     }
 }

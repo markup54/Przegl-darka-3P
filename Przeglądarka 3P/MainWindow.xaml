@@ -57,12 +57,29 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Height="25"
-                    MinWidth="600"
+                    MinWidth="550"
                     TextWrapping="Wrap"
-                    Text="http://"
-                    
+                    Text="http://" 
+                    />
+                <Button
+                    x:Name="btnWejdz"
+                    Content="Wejdź"
+                    Height="25"
+                    Width="50"
+                    Background="CadetBlue"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
                     />
             </ToolBar>
+            <Border 
+                x:Name="brdRamka"
+                BorderBrush="CadetBlue"
+                BorderThickness="3">
+                <WebBrowser
+                    x:Name="wbPrzegladarka"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"/>
+            </Border>
         </DockPanel>
     </Grid>
 </Window>
