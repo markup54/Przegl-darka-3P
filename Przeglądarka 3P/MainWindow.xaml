@@ -13,7 +13,9 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="Plik">
-                <MenuItem Header="Zapisz jako"/>
+                <MenuItem Header="Zapisz jako" 
+                          Click="zapisz_Click"
+                          />
                 <MenuItem Header="Drukuj"/>
                 <Separator/>
                 <MenuItem Header="Wyjsćie" Click="Exit_Click"/>

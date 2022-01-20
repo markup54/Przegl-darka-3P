@@ -90,5 +90,21 @@ namespace Przeglądarka_3P
                 null, this.wbPrzegladarka , new object[] { });
             activeX.Silent = true;
         }
+
+        private void zapisz_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dialog 
+                = new Microsoft.Win32.SaveFileDialog();
+            dialog.Filter = "WebPage | *.html";
+            dynamic doc = wbPrzegladarka.Document;
+            if (doc != null)
+            {
+                var htmlText = doc.documentElement.InnerHtml;
+                if (dialog.ShowDialog() == true && htmlText != null)
+                {
+                    File.WriteAllText(dialog.FileName, htmlText);
+                }   
+            }
+        }
     }
 }
