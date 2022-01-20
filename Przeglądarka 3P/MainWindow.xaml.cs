@@ -41,5 +41,33 @@ namespace Przeglądarka_3P
             if(brdRamka != null)
                 brdRamka.BorderThickness = new Thickness(0);
         }
+
+        private void OProgramie_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Prościutka przeglądarka zrobiona z klasą 3P w styczniu 2022");
+        }
+
+        private void wejdz_Click(object sender, RoutedEventArgs e)
+        {
+            wbPrzegladarka.Navigate(txtAdres.Text);
+        }
+
+        private void wstecz_Clisk(object sender, RoutedEventArgs e)
+        {
+            if(wbPrzegladarka.CanGoBack)
+                wbPrzegladarka.GoBack();
+        }
+
+        private void dalej_Click(object sender, RoutedEventArgs e)
+        {
+            if(wbPrzegladarka.CanGoForward)
+                wbPrzegladarka.GoForward();
+        }
+
+        private void adres_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                wbPrzegladarka.Navigate(txtAdres.Text);
+        }
     }
 }

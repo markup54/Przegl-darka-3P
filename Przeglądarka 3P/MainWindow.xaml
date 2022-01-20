@@ -30,7 +30,7 @@
                     <MenuItem Header="Zwiększ"/>
                     <MenuItem Header="Zmniejsz"/>
                 </MenuItem>
-                <MenuItem Header="O programie"/>
+                <MenuItem Header="O programie" Click="OProgramie_Click"/>
             </MenuItem>
         </Menu>
         <DockPanel Grid.Row="1">
@@ -42,7 +42,9 @@
                     Width="55"
                     Background="CadetBlue"
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Top"/>
+                    VerticalAlignment="Top" 
+                    Click="wstecz_Clisk"
+                    />
                 <Button
                     x:Name="btnDalej"
                     Content="Dalej"
@@ -50,7 +52,9 @@
                     Width="55"
                     Background="CadetBlue"
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Top"/>
+                    VerticalAlignment="Top" 
+                    Click="dalej_Click"
+                    />
                 <Separator/>
                 <TextBox
                     x:Name="txtAdres"
@@ -68,7 +72,8 @@
                     Width="50"
                     Background="CadetBlue"
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
+                    VerticalAlignment="Top" 
+                    Click="wejdz_Click"
                     />
             </ToolBar>
             <Border 
